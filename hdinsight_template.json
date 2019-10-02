@@ -67,23 +67,23 @@
         {
             "type": "Microsoft.HDInsight/clusters",
             "apiVersion": "2015-03-01-preview",
-            "name": "[parameters('clusterName')]",
-            "location": "[parameters('location')]",
+            "name": "knetengineee",
+            "location": "westeurope",
             "dependsOn": [],
             "properties": {
-                "clusterVersion": "[parameters('clusterVersion')]",
+                "clusterVersion": "3.6",
                 "osType": "Linux",
                 "tier": "standard",
                 "clusterDefinition": {
-                    "kind": "[parameters('clusterKind')]",
+                    "kind": "SPARK",
                     "componentVersion": {
                         "Spark": "2.3"
                     },
                     "configurations": {
                         "gateway": {
                             "restAuthCredential.isEnabled": true,
-                            "restAuthCredential.username": "[parameters('clusterLoginUserName')]",
-                            "restAuthCredential.password": "[parameters('clusterLoginPassword')]"
+                            "restAuthCredential.username": "kadmin",
+                            "restAuthCredential.password": "Io.123456789"
                         }
                     }
                 },
@@ -109,8 +109,8 @@
                             },
                             "osProfile": {
                                 "linuxOperatingSystemProfile": {
-                                    "username": "[parameters('sshUserName')]",
-                                    "password": "[parameters('sshPassword')]"
+                                    "username": "sshuser",
+                                    "password": "Io.123456789"
                                 }
                             },
                             "virtualNetworkProfile": null,
@@ -126,8 +126,8 @@
                             },
                             "osProfile": {
                                 "linuxOperatingSystemProfile": {
-                                    "username": "[parameters('sshUserName')]",
-                                    "password": "[parameters('sshPassword')]"
+                                    "username": "sshuser",
+                                    "password": "Io.123456789"
                                 }
                             },
                             "virtualNetworkProfile": null,
